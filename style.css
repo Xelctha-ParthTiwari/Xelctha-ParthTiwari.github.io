@@ -395,17 +395,19 @@ img { max-width: 100%; display: block; }
 }
 
 .about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 340px);
-  gap: 88px;
-  align-items: start;
-  max-width: 1120px;
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.about-text {
+  max-width: 760px;
   margin: 0 auto;
 }
 
 .about-text p {
-  font-size: 1.12rem;
-  margin-bottom: 26px;
+  font-size: 1.15rem;
+  margin-bottom: 28px;
   line-height: 1.85;
   color: var(--text);
 }
@@ -414,50 +416,54 @@ img { max-width: 100%; display: block; }
 
 .about-text p:first-child::first-letter {
   font-family: var(--font-serif);
-  font-size: 4.2rem;
+  font-size: 4.4rem;
   font-weight: 500;
   float: left;
-  line-height: 0.8;
-  padding: 8px 16px 0 0;
+  line-height: 0.78;
+  padding: 6px 18px 0 0;
   color: var(--accent);
 }
 
 .about-meta {
-  position: sticky;
-  top: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 56px;
-  min-height: 60vh;
-  padding-left: 40px;
-  border-left: 1px solid var(--border);
+  margin-top: 90px;
+  padding-top: 60px;
+  position: relative;
+  border-top: 1px solid var(--border);
 }
 
 .about-meta::before {
   content: '';
   position: absolute;
-  top: -1px;
-  left: -1px;
-  width: 1px;
-  height: 90px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--border);
 }
 
 .meta-list {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 44px 36px;
 }
 
 .meta-item {
-  padding-bottom: 22px;
-  border-bottom: 1px solid var(--border);
+  position: relative;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
 }
 
-.meta-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+.meta-item::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
 }
 
 .meta-label {
@@ -466,29 +472,17 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .meta-value {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
-  line-height: 1.45;
+  font-size: 1.1rem;
+  line-height: 1.5;
   color: var(--text);
 }
 
-.meta-mark {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: 500;
-  letter-spacing: 0.55em;
-  color: var(--border);
-  align-self: flex-start;
-  padding-left: 8px;
-  user-select: none;
-  pointer-events: none;
-}
+.meta-mark { display: none; }
 
 .footer {
   padding: 44px 0;
@@ -635,27 +629,13 @@ img { max-width: 100%; display: block; }
   .future-item { grid-template-columns: 50px 1fr; gap: 18px; }
   .card { padding: 34px 26px; }
   .card h3 { font-size: 1.45rem; }
-  .about-grid { grid-template-columns: 1fr; gap: 56px; }
-  .about-meta {
-    position: static;
-    min-height: auto;
-    padding-left: 0;
-    padding-top: 36px;
-    border-left: none;
-    border-top: 1px solid var(--border);
-  }
-  .about-meta::before { display: none; }
-  .meta-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px 32px;
-  }
-  .meta-item { padding-bottom: 0; border-bottom: none; }
-  .meta-mark { display: none; }
-  .about-text p:first-child::first-letter { font-size: 3.4rem; }
   .future-grid { grid-template-columns: 1fr; }
   .future-card { padding: 40px 28px; min-height: auto; }
   .future-desc { opacity: 1; transform: none; }
+}
+
+@media (max-width: 800px) {
+  .meta-list { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
@@ -684,7 +664,9 @@ img { max-width: 100%; display: block; }
   .socials a { width: 40px; height: 40px; font-size: 0.62rem; }
   .footer p { font-size: 0.62rem; letter-spacing: 0.1em; }
   .about-text p { font-size: 1rem; line-height: 1.8; }
-  .meta-list { grid-template-columns: 1fr; gap: 22px; }
+  .about-text p:first-child::first-letter { font-size: 3.2rem; padding: 4px 12px 0 0; }
+  .about-meta { margin-top: 60px; padding-top: 44px; }
+  .meta-list { grid-template-columns: 1fr; gap: 28px; }
   .meta-value { font-size: 1rem; }
   .future-card { padding: 34px 24px; }
   .future-card h3 { font-size: 1.5rem; }
