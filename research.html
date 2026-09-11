@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Xelctha (Parth Tiwari)</title>
+  <meta name="description" content="Scientific research by Xelctha (Parth Tiwari) — mathematical physics, quantum theory, and open science." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">XELCTHA</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="writing.html">Writing</a>
+        <a href="work.html">Work</a>
+        <a href="future.html">Future</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="icon-sun">☀</span>
+        <span class="icon-moon">☾</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero hero-inner">
+      <div class="hero-bg look"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="hero-eyebrow">02 — Research</p>
+        <h1 class="hero-name">Scientific Work <span class="hero-real">Preprints · Data · Open Science</span></h1>
+        <p class="hero-tagline">Mathematical Physics · Quantum Theory</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container container-narrow">
+        <p class="section-label">01 — Overview</p>
+        <h2 class="section-title">Independent research, published openly.</h2>
+        <p class="section-intro">Research is conducted without institutional affiliation and shared through standard open-science infrastructure. All work carries a permanent identifier and links to an ORCID record for long-term citation.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <p class="section-label">02 — Platforms</p>
+        <h2 class="section-title">Where the work lives.</h2>
+        <div class="grid grid-3">
+          <a href="https://orcid.org/0009-0002-2336-597X" target="_blank" rel="noopener" class="card tilt">
+            <span class="card-num">01</span>
+            <h3>ORCID</h3>
+            <p>Permanent digital researcher identifier — the anchor for every future publication.</p>
+            <span class="card-link">0009-0002-2336-597X →</span>
+          </a>
+          <a href="https://arxiv.org" target="_blank" rel="noopener" class="card tilt">
+            <span class="card-num">02</span>
+            <h3>arXiv</h3>
+            <p>Preprints in mathematical physics and related fields. First submission in preparation.</p>
+            <span class="card-link">Visit arXiv →</span>
+          </a>
+          <a href="https://zenodo.org" target="_blank" rel="noopener" class="card tilt">
+            <span class="card-num">03</span>
+            <h3>Zenodo</h3>
+            <p>Open datasets, code, and supplementary materials — each with a permanent DOI.</p>
+            <span class="card-link">Linked via ORCID →</span>
+          </a>
+        </div>
+        <div class="grid grid-1 mt-2">
+          <a href="https://stackexchange.com/users/47035579/parth-tiwari" target="_blank" rel="noopener" class="card card-wide tilt">
+            <span class="card-num">04</span>
+            <h3>Stack Exchange</h3>
+            <p>Active participation in physics, mathematics, and computer science communities — technical questions, careful answers, and cross-checked reasoning.</p>
+            <span class="card-link">View profile →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-label">03 — Focus Areas</p>
+        <h2 class="section-title">Current lines of inquiry.</h2>
+        <div class="grid grid-3">
+          <div class="card tilt">
+            <span class="card-num">01</span>
+            <h3>Four-dimensional geometry</h3>
+            <p>Formal treatment of fourth spatial dimensions and their mathematical structure.</p>
+          </div>
+          <div class="card tilt">
+            <span class="card-num">02</span>
+            <h3>Quantum formalism</h3>
+            <p>Foundational questions in quantum mechanics and its geometric underpinnings.</p>
+          </div>
+          <div class="card tilt">
+            <span class="card-num">03</span>
+            <h3>Mathematical physics</h3>
+            <p>Bridge work between pure mathematics and physical theory.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container container-narrow">
+        <p class="section-label">04 — Method</p>
+        <h2 class="section-title">How the research is done.</h2>
+        <p class="section-intro">All work follows a strict method: literature review, formal derivation, verification against known results, then documentation in LaTeX before publication. Nothing is released until it can survive scrutiny from the relevant community.</p>
+        <div class="hero-cta" style="margin-top: 32px;">
+          <a href="writing.html" class="btn btn-primary">See Writing</a>
+          <a href="contact.html" class="btn btn-ghost">Collaborate</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Xelctha (Parth Tiwari). All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
