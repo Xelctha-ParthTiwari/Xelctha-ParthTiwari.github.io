@@ -6,7 +6,7 @@
   --max-width: 1200px;
 }
 
-[data-theme="dark"] {
+:root {
   --bg: #08080f;
   --bg-alt: #0d0d1a;
   --bg-card: #12122a;
@@ -18,20 +18,6 @@
   --border: rgba(139, 92, 246, 0.2);
   --border-strong: rgba(139, 92, 246, 0.5);
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.65);
-}
-
-[data-theme="light"] {
-  --bg: #f0eef8;
-  --bg-alt: #e6e3f5;
-  --bg-card: #faf9ff;
-  --text: #14121f;
-  --text-muted: #5a5478;
-  --accent: #6d28d9;
-  --accent-2: #2563eb;
-  --accent-soft: rgba(109, 40, 217, 0.1);
-  --border: rgba(109, 40, 217, 0.25);
-  --border-strong: rgba(109, 40, 217, 0.55);
-  --shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -139,12 +125,6 @@ img { max-width: 100%; display: block; }
   border-color: var(--border-strong);
   background: var(--accent-soft);
 }
-
-.icon-sun, .icon-moon { transition: opacity var(--transition); }
-[data-theme="dark"] .icon-sun { opacity: 0.35; }
-[data-theme="dark"] .icon-moon { opacity: 1; }
-[data-theme="light"] .icon-sun { opacity: 1; }
-[data-theme="light"] .icon-moon { opacity: 0.35; }
 
 .hero {
   position: relative;
