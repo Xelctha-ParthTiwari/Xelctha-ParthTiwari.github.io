@@ -397,47 +397,6 @@ img { max-width: 100%; display: block; }
   background: var(--accent-soft);
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.about-text p {
-  font-size: 1.05rem;
-  margin-bottom: 22px;
-  line-height: 1.85;
-}
-
-.about-text p:first-child::first-letter {
-  font-family: var(--font-serif);
-  font-size: 3.6rem;
-  float: left;
-  line-height: 0.85;
-  padding: 6px 12px 0 0;
-  color: var(--accent);
-}
-
-.about-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  border-left: 1px solid var(--border);
-  padding-left: 32px;
-}
-
-.meta-label {
-  display: block;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 6px;
-}
-
-.meta-value { font-family: var(--font-serif); font-size: 1.15rem; }
-
 .footer {
   padding: 44px 0;
   border-top: 1px solid var(--border);
