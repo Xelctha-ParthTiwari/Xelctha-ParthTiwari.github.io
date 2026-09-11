@@ -107,25 +107,6 @@ img { max-width: 100%; display: block; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
-.theme-toggle {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--accent);
-  width: 38px; height: 38px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 0.9rem;
-  display: grid;
-  place-items: center;
-  transition: all var(--transition);
-  flex-shrink: 0;
-}
-
-.theme-toggle:hover {
-  border-color: var(--border-strong);
-  background: var(--accent-soft);
-}
-
 .hero {
   position: relative;
   min-height: 100vh;
@@ -146,8 +127,6 @@ img { max-width: 100%; display: block; }
   filter: grayscale(15%) contrast(110%);
   z-index: 0;
 }
-
-[data-theme="light"] .hero-bg { filter: grayscale(35%) brightness(0.85); }
 
 .hero-bg.angel { background-image: url('assets/angel.jpg'); }
 .hero-bg.bust { background-image: url('assets/david-bust.jpg'); }
