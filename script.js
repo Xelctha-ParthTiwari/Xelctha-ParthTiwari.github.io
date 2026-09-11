@@ -1,21 +1,7 @@
 (function () {
   'use strict';
 
-  const html = document.documentElement;
-  const toggle = document.getElementById('theme-toggle');
-  const STORAGE_KEY = 'xelctha-theme';
-
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved) html.setAttribute('data-theme', saved);
-
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem(STORAGE_KEY, next);
-    });
-  }
+  localStorage.removeItem('xelctha-theme');
 
   const revealTargets = document.querySelectorAll('.reveal, .card, .future-item, .section-title, .about-grid');
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
