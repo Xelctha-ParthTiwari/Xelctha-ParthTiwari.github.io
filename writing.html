@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing — Xelctha (Parth Tiwari)</title>
+  <meta name="description" content="Writing by Xelctha (Parth Tiwari) — essays, technical documentation, and long-form fiction." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">XELCTHA</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="writing.html" class="active">Writing</a>
+        <a href="work.html">Work</a>
+        <a href="future.html">Future</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="icon-sun">☀</span>
+        <span class="icon-moon">☾</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero hero-inner">
+      <div class="hero-bg creation"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="hero-eyebrow">03 — Writing</p>
+        <h1 class="hero-name">The Written Work <span class="hero-real">Essays · Fiction · Documentation</span></h1>
+        <p class="hero-tagline">Clarity as a discipline</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container container-narrow">
+        <p class="section-label">01 — Overview</p>
+        <h2 class="section-title">Writing as a form of thinking.</h2>
+        <p class="section-intro">Writing is treated as an instrument, not an afterthought. Technical documentation clarifies systems. Essays clarify ideas. Fiction clarifies people. Each form serves a different purpose and each is approached with the same rigor.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <p class="section-label">02 — Publications</p>
+        <h2 class="section-title">Where the writing lives.</h2>
+        <div class="grid grid-3">
+          <a href="https://medium.com/@xelctha.parthtiwari" target="_blank" rel="noopener" class="card tilt">
+            <span class="card-num">01</span>
+            <h3>Medium</h3>
+            <p>Essays on science, philosophy, and technology — long-form pieces for a general audience.</p>
+            <span class="card-link">Read →</span>
+          </a>
+          <a href="https://xelcthaparthtiwari.substack.com" target="_blank" rel="noopener" class="card tilt">
+            <span class="card-num">02</span>
+            <h3>Substack</h3>
+            <p>Newsletter featuring research notes, working thoughts, and longer explorations.</p>
+            <span class="card-link">Subscribe →</span>
+          </a>
+          <a href="https://www.royalroad.com/profile/1070186" target="_blank" rel="noopener" class="card tilt">
+            <span class="card-num">03</span>
+            <h3>Royal Road</h3>
+            <p>Serial fiction — speculative and science-fiction narratives told chapter by chapter.</p>
+            <span class="card-link">Read →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-label">03 — Forms</p>
+        <h2 class="section-title">Kinds of writing.</h2>
+        <div class="grid grid-3">
+          <div class="card tilt">
+            <span class="card-num">01</span>
+            <h3>Essays</h3>
+            <p>Argumentative and exploratory pieces on science, philosophy, and the intersection of the two.</p>
+          </div>
+          <div class="card tilt">
+            <span class="card-num">02</span>
+            <h3>Technical documentation</h3>
+            <p>Structured explanations for code, systems, and scientific methods — clear, precise, and reusable.</p>
+          </div>
+          <div class="card tilt">
+            <span class="card-num">03</span>
+            <h3>Fiction</h3>
+            <p>Speculative and science fiction, serialized and long-form, published chapter by chapter.</p>
+          </div>
+        </div>
+        <div class="grid grid-2 mt-2">
+          <div class="card tilt">
+            <span class="card-num">04</span>
+            <h3>Scientific writing</h3>
+            <p>Formal research writing in LaTeX — abstracts, papers, and preprints intended for open publication.</p>
+          </div>
+          <div class="card tilt">
+            <span class="card-num">05</span>
+            <h3>Philosophical writing</h3>
+            <p>Reflective pieces on knowledge, science, and the nature of inquiry itself.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container container-narrow">
+        <p class="section-label">04 — Statement</p>
+        <h2 class="section-title">Why writing matters here.</h2>
+        <p class="section-intro">An idea that cannot be explained is an idea not fully understood. Writing is the final test of clarity — a way to confirm that a thought survives the transfer from mind to page. Every paper, essay, and story published here has passed through that test.</p>
+        <div class="hero-cta" style="margin-top: 32px;">
+          <a href="work.html" class="btn btn-primary">See Work</a>
+          <a href="contact.html" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Xelctha (Parth Tiwari). All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
