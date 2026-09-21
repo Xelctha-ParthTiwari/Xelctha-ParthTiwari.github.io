@@ -30,165 +30,64 @@
   const canvas = document.getElementById('bg-canvas');
   if (canvas && !prefersReduced) {
     const ctx = canvas.getContext('2d');
-    const colors = ['#8b5cf6', '#4f7fff', '#a78bfa', '#60a5fa'];
-    const sprites = {};
+
+    const palettes = [
+      [139, 92, 246],
+      [79, 127, 255],
+      [167, 139, 250],
+      [96, 165, 250]
+    ];
+
+    const ribbons = [
+      { y: 0.20, amp: 0.055, freq: 1.4, speed: 0.22, thick: 1.6, color: palettes[0] },
+      { y: 0.40, amp: 0.075, freq: 1.0, speed: 0.18, thick: 2.2, color: palettes[1] },
+      { y: 0.60, amp: 0.065, freq: 1.6, speed: 0.26, thick: 1.8, color: palettes[2] },
+      { y: 0.76, amp: 0.048, freq: 1.2, speed: 0.30, thick: 1.4, color: palettes[3] },
+      { y: 0.90, amp: 0.055, freq: 0.9, speed: 0.16, thick: 2.0, color: palettes[0] }
+    ];
+
     const mouse = { x: -9999, y: -9999, active: false };
 
-    let width = 0;
-    let height = 0;
-    let particles = [];
-
-    function rgba(hex, a) {
-      const r = parseInt(hex.slice(1, 3), 16);
-      const g = parseInt(hex.slice(3, 5), 16);
-      const b = parseInt(hex.slice(5, 7), 16);
-      return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
-    }
-
-    function makeSprite(color) {
-      const size = 128;
-      const c = document.createElement('canvas');
-      c.width = size;
-      c.height = size;
-      const g = c.getContext('2d');
-      const grad = g.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
-      grad.addColorStop(0, rgba(color, 0.9));
-      grad.addColorStop(0.2, rgba(color, 0.55));
-      grad.addColorStop(0.5, rgba(color, 0.18));
-      grad.addColorStop(1, rgba(color, 0));
-      g.fillStyle = grad;
-      g.fillRect(0, 0, size, size);
-      return c;
-    }
-
-    colors.forEach((c) => { sprites[c] = makeSprite(c); });
+    let w = 0;
+    let h = 0;
 
     function resize() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = Math.floor(width * dpr);
-      canvas.height = Math.floor(height * dpr);
-      canvas.style.width = width + 'px';
-      canvas.style.height = height + 'px';
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    function spawn() {
-      const target = Math.min(90, Math.max(40, Math.floor((width * height) / 19000)));
-      particles = [];
-      for (let i = 0; i < target; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.32,
-          vy: (Math.random() - 0.5) * 0.32,
-          r: Math.random() * 1.5 + 0.7,
-          color: colors[Math.floor(Math.random() * colors.length)],
-          phase: Math.random() * Math.PI * 2
-        });
-      }
-    }
-
-    function init() {
-      resize();
-      spawn();
-    }
-
-    function frame() {
-      ctx.clearRect(0, 0, width, height);
-
-      const linkDist = 140;
-      const mouseDist = 220;
-
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        p.phase += 0.014;
-
-        if (p.x < -30) p.x = width + 30;
-        else if (p.x > width + 30) p.x = -30;
-        if (p.y < -30) p.y = height + 30;
-        else if (p.y > height + 30) p.y = -30;
-
-        if (mouse.active) {
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < 150 && d > 0.1) {
-            const f = (150 - d) / 150;
-            p.x += (dx / d) * f * 0.7;
-            p.y += (dy / d) * f * 0.7;
-          }
-        }
-      }
-
-      ctx.lineWidth = 0.6;
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        for (let j = i + 1; j < particles.length; j++) {
-          const q = particles[j];
-          const dx = p.x - q.x;
-          const dy = p.y - q.y;
-          const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < linkDist) {
-            ctx.globalAlpha = (1 - d / linkDist) * 0.14;
-            ctx.strokeStyle = p.color;
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(q.x, q.y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      if (mouse.active) {
-        ctx.lineWidth = 0.75;
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < mouseDist) {
-            ctx.globalAlpha = (1 - d / mouseDist) * 0.35;
-            ctx.strokeStyle = p.color;
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        const pulse = 1 + Math.sin(p.phase) * 0.22;
-        const size = p.r * 12 * pulse;
-        ctx.globalAlpha = 0.4;
-        ctx.drawImage(sprites[p.color], p.x - size / 2, p.y - size / 2, size, size);
-        ctx.globalAlpha = 0.95;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r * pulse, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.fill();
-      }
-
-      ctx.globalAlpha = 1;
-      requestAnimationFrame(frame);
-    }
+    resize();
 
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(init, 150);
+      resizeTimer = setTimeout(resize, 150);
     });
 
     window.addEventListener('pointermove', (e) => {
-      if (e.pointerType !== 'mouse') return;
       mouse.x = e.clientX;
       mouse.y = e.clientY;
       mouse.active = true;
+    });
+
+    window.addEventListener('pointerdown', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    });
+
+    window.addEventListener('pointerup', () => {
+      if (window.matchMedia('(pointer: coarse)').matches) {
+        mouse.active = false;
+        mouse.x = -9999;
+        mouse.y = -9999;
+      }
     });
 
     document.addEventListener('pointerleave', () => {
@@ -197,7 +96,70 @@
       mouse.y = -9999;
     });
 
-    init();
+    window.addEventListener('scroll', () => {
+      if (!mouse.active) return;
+    }, { passive: true });
+
+    const segs = 70;
+    let t = 0;
+
+    const layers = [
+      { mult: 26, alpha: 0.028 },
+      { mult: 12, alpha: 0.055 },
+      { mult: 4,  alpha: 0.11 },
+      { mult: 1,  alpha: 0.20 }
+    ];
+
+    function frame() {
+      ctx.clearRect(0, 0, w, h);
+
+      const influence = Math.min(w, h) * 0.38;
+
+      for (let r = 0; r < ribbons.length; r++) {
+        const rb = ribbons[r];
+        const baseY = h * rb.y;
+
+        const pts = [];
+        for (let i = 0; i <= segs; i++) {
+          const u = i / segs;
+          const x = u * w;
+
+          let y = baseY
+            + Math.sin(u * Math.PI * 2 * rb.freq + t * rb.speed) * h * rb.amp
+            + Math.sin(u * Math.PI * 2 * rb.freq * 2.3 + t * rb.speed * 1.4) * h * rb.amp * 0.32;
+
+          if (mouse.active) {
+            const dx = x - mouse.x;
+            if (dx > -influence && dx < influence) {
+              const fall = 1 - (dx * dx) / (influence * influence);
+              y += (mouse.y - baseY) * fall * 0.28;
+            }
+          }
+
+          pts.push(x, y);
+        }
+
+        const base = 'rgba(' + rb.color[0] + ',' + rb.color[1] + ',' + rb.color[2] + ',';
+
+        for (let l = 0; l < layers.length; l++) {
+          const ly = layers[l];
+          ctx.strokeStyle = base + ly.alpha + ')';
+          ctx.lineWidth = rb.thick * ly.mult;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+          ctx.beginPath();
+          ctx.moveTo(pts[0], pts[1]);
+          for (let i = 2; i < pts.length; i += 2) {
+            ctx.lineTo(pts[i], pts[i + 1]);
+          }
+          ctx.stroke();
+        }
+      }
+
+      t += 0.006;
+      requestAnimationFrame(frame);
+    }
+
     frame();
   }
 
