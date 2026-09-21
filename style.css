@@ -686,3 +686,88 @@ img { max-width: 100%; display: block; }
   .reveal, .card, .future-item { opacity: 1; transform: none; }
   #bg-canvas { display: none; }
 }
+
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 520px;
+  margin: -260px 0 0 -260px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.14) 0%,
+    rgba(79, 127, 255, 0.05) 32%,
+    transparent 68%
+  );
+  will-change: transform;
+}
+
+.cursor-glow.active {
+  opacity: 1;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 200;
+  transform-origin: 0 0;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.hero-spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  background: radial-gradient(
+    circle 520px at var(--hx, 50%) var(--hy, 50%),
+    rgba(139, 92, 246, 0.22) 0%,
+    rgba(79, 127, 255, 0.08) 34%,
+    transparent 66%
+  );
+  mix-blend-mode: screen;
+}
+
+.hero-spotlight.active {
+  opacity: 1;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  background: radial-gradient(
+    circle 220px at var(--mx, 50%) var(--my, 50%),
+    rgba(139, 92, 246, 0.14) 0%,
+    transparent 62%
+  );
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .cursor-glow,
+  .hero-spotlight {
+    display: none;
+  }
+}
