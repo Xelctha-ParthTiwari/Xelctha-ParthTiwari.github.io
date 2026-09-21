@@ -9,14 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script src="decoration.js"></script>
-  <script src="interactions.js"></script>
-  <script src="script.js"></script>
   <script type="importmap">
-  { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+    { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
   </script>
 </head>
-<script type="module" src="three-scene.js"></script>
 <body>
 
   <canvas id="bg-canvas"></canvas>
@@ -52,6 +48,76 @@
           <a href="about.html" class="btn btn-primary">Enter</a>
           <a href="contact.html" class="btn btn-ghost">Contact</a>
         </div>
+      </div>
+    </section>
+
+    <section class="cabinet">
+      <div class="cabinet-inner">
+
+        <aside class="cabinet-rail">
+          <a href="research.html" class="rail-item">
+            <img src="assets/sages.jpg" alt="Research" />
+            <span>Research</span>
+          </a>
+          <a href="writing.html" class="rail-item">
+            <img src="assets/creation.jpg" alt="Writing" />
+            <span>Writing</span>
+          </a>
+          <a href="work.html" class="rail-item">
+            <img src="assets/halo.jpg" alt="Work" />
+            <span>Work</span>
+          </a>
+          <a href="future.html" class="rail-item">
+            <img src="assets/archangel.jpg" alt="Future" />
+            <span>Future</span>
+          </a>
+        </aside>
+
+        <div class="cabinet-center">
+          <p class="cabinet-eyebrow">Cabinet</p>
+          <h2 class="cabinet-name">
+            Xelctha
+            <span>(Parth Tiwari)</span>
+          </h2>
+          <div class="cabinet-dates">
+            <div class="cabinet-date">
+              <span class="cabinet-label">Practice</span>
+              <span class="cabinet-value">Since 2020</span>
+              <span class="cabinet-sub">Independent · Self-directed</span>
+            </div>
+            <div class="cabinet-dash">—</div>
+            <div class="cabinet-date">
+              <span class="cabinet-label">Based</span>
+              <span class="cabinet-value">India</span>
+              <span class="cabinet-sub">Working across disciplines</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cabinet-gallery">
+          <a href="research.html" class="gallery-card">
+            <div class="gallery-frame">
+              <img src="assets/sages.jpg" alt="" />
+            </div>
+            <span class="gallery-title">Research</span>
+            <small>Mathematical Physics</small>
+          </a>
+          <a href="writing.html" class="gallery-card">
+            <div class="gallery-frame">
+              <img src="assets/creation.jpg" alt="" />
+            </div>
+            <span class="gallery-title">Writing</span>
+            <small>Essays · Fiction</small>
+          </a>
+          <a href="work.html" class="gallery-card">
+            <div class="gallery-frame">
+              <img src="assets/halo.jpg" alt="" />
+            </div>
+            <span class="gallery-title">Work</span>
+            <small>Code · Games · Music</small>
+          </a>
+        </div>
+
       </div>
     </section>
 
@@ -119,6 +185,9 @@
     </div>
   </footer>
 
+  <script src="decoration.js"></script>
+  <script src="interactions.js"></script>
   <script src="script.js"></script>
+  <script type="module" src="three-scene.js"></script>
 </body>
 </html>
