@@ -4,7 +4,6 @@
   localStorage.removeItem('xelctha-theme');
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isTouch = window.matchMedia('(hover: none)').matches;
 
   const revealTargets = document.querySelectorAll('.reveal, .card, .future-item, .section-title, .about-grid');
 
@@ -28,107 +27,6 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  if (!prefersReduced) {
-    const bar = document.createElement('div');
-    bar.className = 'scroll-progress';
-    document.body.appendChild(bar);
-
-    let scheduled = false;
-    const updateBar = () => {
-      scheduled = false;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const p = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
-      bar.style.transform = `scaleX(${p})`;
-    };
-
-    window.addEventListener('scroll', () => {
-      if (!scheduled) {
-        scheduled = true;
-        window.requestAnimationFrame(updateBar);
-      }
-    }, { passive: true });
-
-    updateBar();
-  }
-
-  if (!isTouch && !prefersReduced) {
-    const glow = document.createElement('div');
-    glow.className = 'cursor-glow';
-    document.body.appendChild(glow);
-
-    let gx = window.innerWidth / 2;
-    let gy = window.innerHeight / 2;
-    let tx = gx;
-    let ty = gy;
-    let visible = false;
-
-    const tick = () => {
-      gx += (tx - gx) * 0.14;
-      gy += (ty - gy) * 0.14;
-      glow.style.transform = `translate3d(${gx}px, ${gy}px, 0)`;
-      requestAnimationFrame(tick);
-    };
-
-    window.addEventListener('mousemove', (e) => {
-      tx = e.clientX;
-      ty = e.clientY;
-      if (!visible) {
-        gx = tx;
-        gy = ty;
-        visible = true;
-        glow.classList.add('active');
-      }
-    });
-
-    document.addEventListener('mouseleave', () => {
-      glow.classList.remove('active');
-      visible = false;
-    });
-
-    tick();
-  }
-
-  if (!isTouch && !prefersReduced) {
-    document.querySelectorAll('.hero').forEach((hero) => {
-      const spot = document.createElement('div');
-      spot.className = 'hero-spotlight';
-      const content = hero.querySelector('.hero-content');
-      if (content) hero.insertBefore(spot, content);
-      else hero.appendChild(spot);
-
-      hero.addEventListener('mousemove', (e) => {
-        const rect = hero.getBoundingClientRect();
-        spot.style.setProperty('--hx', (e.clientX - rect.left) + 'px');
-        spot.style.setProperty('--hy', (e.clientY - rect.top) + 'px');
-        spot.classList.add('active');
-      });
-
-      hero.addEventListener('mouseleave', () => {
-        spot.classList.remove('active');
-      });
-    });
-  }
-
-  if (!isTouch && !prefersReduced) {
-    document.querySelectorAll('.tilt').forEach((card) => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const cx = rect.width / 2;
-        const cy = rect.height / 2;
-        const rotateY = ((x - cx) / cx) * 5;
-        const rotateX = -((y - cy) / cy) * 5;
-        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-        card.style.setProperty('--mx', x + 'px');
-        card.style.setProperty('--my', y + 'px');
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-      });
-    });
-  }
-
   const canvas = document.getElementById('bg-canvas');
   if (canvas && !prefersReduced) {
     const ctx = canvas.getContext('2d');
@@ -144,7 +42,7 @@
       const r = parseInt(hex.slice(1, 3), 16);
       const g = parseInt(hex.slice(3, 5), 16);
       const b = parseInt(hex.slice(5, 7), 16);
-      return `rgba(${r},${g},${b},${a})`;
+      return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
     }
 
     function makeSprite(color) {
@@ -286,13 +184,14 @@
       resizeTimer = setTimeout(init, 150);
     });
 
-    window.addEventListener('mousemove', (e) => {
+    window.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
       mouse.x = e.clientX;
       mouse.y = e.clientY;
       mouse.active = true;
     });
 
-    document.addEventListener('mouseleave', () => {
+    document.addEventListener('pointerleave', () => {
       mouse.active = false;
       mouse.x = -9999;
       mouse.y = -9999;
