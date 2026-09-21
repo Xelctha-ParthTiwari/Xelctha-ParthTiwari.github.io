@@ -9,14 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script src="decoration.js"></script>
-  <script src="interactions.js"></script>
-  <script src="script.js"></script>
   <script type="importmap">
-  { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+    { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
   </script>
 </head>
-<script type="module" src="three-scene.js"></script>
 <body>
 
   <canvas id="bg-canvas"></canvas>
@@ -41,7 +37,7 @@
   <main>
 
     <section class="hero hero-inner">
-      <div class="hero-bg angel"></div>
+      <div class="hero-bg archangel"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content reveal">
         <p class="hero-eyebrow">05 — Future</p>
@@ -92,14 +88,15 @@
             </div>
           </div>
 
-          <div class="future-card reveal">
+          <a href="vincet.html" class="future-card reveal">
             <div class="future-card-inner">
               <span class="card-num">04</span>
               <h3>Vincet</h3>
-              <span class="future-status">In development</span>
+              <span class="future-status">Preview available</span>
               <p class="future-desc">A standalone web browser built from the ground up. Designed around clarity, speed, and user control — a long-term software engineering project addressing the modern web experience from first principles.</p>
+              <span class="card-link" style="display:block;margin-top:20px;">View Preview →</span>
             </div>
-          </div>
+          </a>
 
         </div>
       </div>
@@ -125,6 +122,9 @@
     </div>
   </footer>
 
+  <script src="decoration.js"></script>
+  <script src="interactions.js"></script>
   <script src="script.js"></script>
+  <script type="module" src="three-scene.js"></script>
 </body>
 </html>
