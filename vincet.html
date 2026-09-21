@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vincet — A Standalone Web Browser</title>
+  <meta name="description" content="Vincet — a standalone web browser built from the ground up by Xelctha (Parth Tiwari)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="vincet.css" />
+</head>
+<body>
+
+  <header class="v-nav">
+    <a href="index.html" class="v-brand">
+      <span class="v-mark">V</span>
+      <span class="v-name">Vincet</span>
+    </a>
+    <nav class="v-links">
+      <a href="#overview" class="active">Overview</a>
+      <a href="#interface">Interface</a>
+      <a href="#principles">Principles</a>
+      <a href="#status">Status</a>
+    </nav>
+    <a href="index.html" class="v-back">Back to Portfolio</a>
+  </header>
+
+  <main>
+
+    <section class="v-hero">
+      <p class="v-eyebrow">Product Preview — In Development</p>
+      <h1 class="v-title">A browser built<br />from first principles.</h1>
+      <p class="v-sub">Vincet is a standalone web browser — written from the ground up. Clarity over clutter. Speed over ceremony. Control returned to the person using it.</p>
+      <div class="v-cta">
+        <a href="#interface" class="v-btn v-btn-primary">See the Interface</a>
+        <a href="contact.html" class="v-btn v-btn-ghost">Follow Development</a>
+      </div>
+    </section>
+
+    <section class="v-section" id="interface">
+      <div class="v-container">
+        <p class="v-label">01 — Interface</p>
+        <h2 class="v-heading">What it looks like.</h2>
+
+        <div class="browser-mockup">
+          <div class="bm-topbar">
+            <div class="bm-tabs">
+              <div class="bm-tab active">
+                <span class="bm-favicon"></span>
+                <span>Xelctha — Portfolio</span>
+              </div>
+              <div class="bm-tab">
+                <span class="bm-favicon alt"></span>
+                <span>Vincet Documentation</span>
+              </div>
+              <button class="bm-new">+</button>
+            </div>
+          </div>
+          <div class="bm-bar">
+            <button class="bm-ctrl">←</button>
+            <button class="bm-ctrl">→</button>
+            <button class="bm-ctrl">↻</button>
+            <div class="bm-address">
+              <span class="bm-lock">●</span>
+              <span>xelctha-parthtiwari.github.io</span>
+            </div>
+            <button class="bm-ctrl">⋯</button>
+          </div>
+          <div class="bm-content">
+            <div class="bm-line long"></div>
+            <div class="bm-line medium"></div>
+            <div class="bm-line short"></div>
+            <div class="bm-blocks">
+              <div class="bm-block"></div>
+              <div class="bm-block"></div>
+              <div class="bm-block"></div>
+            </div>
+          </div>
+          <div class="bm-status">
+            <span>Ready</span>
+            <span class="bm-status-right">No trackers · No telemetry</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="v-section v-alt" id="principles">
+      <div class="v-container">
+        <p class="v-label">02 — Principles</p>
+        <h2 class="v-heading">Three rules behind the build.</h2>
+        <div class="v-grid">
+          <article class="v-card">
+            <span class="v-num">01</span>
+            <h3>Clarity over clutter</h3>
+            <p>A browser should be quiet. Controls appear where they are needed and recede when they are not. Chrome serves the page — never the other way around.</p>
+          </article>
+          <article class="v-card">
+            <span class="v-num">02</span>
+            <h3>Speed as respect</h3>
+            <p>Every millisecond of latency is a small tax on attention. Vincet is written to open, render, and respond faster than the modern web expects.</p>
+          </article>
+          <article class="v-card">
+            <span class="v-num">03</span>
+            <h3>The user owns the data</h3>
+            <p>No telemetry. No trackers. No hidden calls. What a person reads, saves, or searches is theirs — not a dataset.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="v-section" id="overview">
+      <div class="v-container">
+        <p class="v-label">03 — Overview</p>
+        <h2 class="v-heading">A long-term engineering project.</h2>
+        <div class="v-specs">
+          <div class="v-spec">
+            <span class="v-spec-label">Codename</span>
+            <span class="v-spec-value">Vincet</span>
+          </div>
+          <div class="v-spec">
+            <span class="v-spec-label">Type</span>
+            <span class="v-spec-value">Standalone web browser</span>
+          </div>
+          <div class="v-spec">
+            <span class="v-spec-label">Built by</span>
+            <span class="v-spec-value">Xelctha (Parth Tiwari)</span>
+          </div>
+          <div class="v-spec">
+            <span class="v-spec-label">Release</span>
+            <span class="v-spec-value">In development</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="v-section v-alt" id="status">
+      <div class="v-container v-narrow">
+        <p class="v-label">04 — Status</p>
+        <h2 class="v-heading">Where the project stands.</h2>
+        <p class="v-body">Vincet is in active development. The rendering engine, tab architecture, and privacy layer are being built from scratch. Announcements, screenshots, and early builds will appear here and on the portfolio's Future page as each milestone is reached.</p>
+        <div class="v-cta">
+          <a href="future.html" class="v-btn v-btn-primary">See Future Projects</a>
+          <a href="contact.html" class="v-btn v-btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="v-footer">
+    <p>© <span id="vyear"></span> Xelctha (Parth Tiwari). Vincet is in development.</p>
+  </footer>
+
+  <script>document.getElementById('vyear').textContent = new Date().getFullYear();</script>
+</body>
+</html>
