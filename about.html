@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script type="importmap">
-  { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+    { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
   </script>
 </head>
 <body>
@@ -140,189 +140,297 @@
       <div class="container">
         <p class="section-label">04 — Languages</p>
         <h2 class="section-title">Eighteen languages, held at complete fluency.</h2>
-        <p class="section-intro">Hindi is native. The remaining seventeen are held across reading, writing, and speech. What follows is one line from each — a place where the language is most itself.</p>
+        <p class="section-intro">Hindi is native. The remaining seventeen are held across reading, writing, and speech. Open any language to see a line from it.</p>
 
         <div class="lang-grid">
 
-          <div class="lang-item native">
-            <div class="lang-head">
-              <span class="lang-name">Hindi</span>
-              <span class="lang-native">हिन्दी</span>
-            </div>
-            <p class="lang-quote">जहाँ चाह, वहाँ राह।</p>
-            <p class="lang-translation">Where there is will, there is a way.</p>
-            <span class="lang-source">Proverb · Native</span>
-          </div>
+          <details class="lang-item native">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Hindi</span>
+                <span class="lang-native">हिन्दी</span>
+                <span class="lang-family">Native · Indo-Aryan</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">जहाँ चाह, वहाँ राह।</p>
+              <p class="lang-translation">Where there is will, there is a way.</p>
+              <span class="lang-source">Proverb · Native</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Sanskrit</span>
-              <span class="lang-native">संस्कृतम्</span>
-            </div>
-            <p class="lang-quote">तत् त्वम् असि।</p>
-            <p class="lang-translation">That thou art.</p>
-            <span class="lang-source">Chāndogya Upaniṣad</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Sanskrit</span>
+                <span class="lang-native">संस्कृतम्</span>
+                <span class="lang-family">Classical · Indo-Aryan</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">तत् त्वम् असि।</p>
+              <p class="lang-translation">That thou art.</p>
+              <span class="lang-source">Chāndogya Upaniṣad</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">English</span>
-              <span class="lang-native">English</span>
-            </div>
-            <p class="lang-quote">The rest is silence.</p>
-            <p class="lang-translation">Hamlet's last words.</p>
-            <span class="lang-source">Shakespeare · Hamlet, V.ii</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">English</span>
+                <span class="lang-native">English</span>
+                <span class="lang-family">Germanic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">The rest is silence.</p>
+              <p class="lang-translation">Hamlet's last words.</p>
+              <span class="lang-source">Shakespeare · Hamlet, V.ii</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Latin</span>
-              <span class="lang-native">Latīna</span>
-            </div>
-            <p class="lang-quote">Flectere si nequeo superos, Acheronta movebo.</p>
-            <p class="lang-translation">If I cannot bend the heavens, I shall move the underworld.</p>
-            <span class="lang-source">Virgil · Aeneid VII</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Latin</span>
+                <span class="lang-native">Latīna</span>
+                <span class="lang-family">Classical · Italic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">Flectere si nequeo superos, Acheronta movebo.</p>
+              <p class="lang-translation">If I cannot bend the heavens, I shall move the underworld.</p>
+              <span class="lang-source">Virgil · Aeneid VII</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Greek</span>
-              <span class="lang-native">Ελληνικά</span>
-            </div>
-            <p class="lang-quote">ἓν οἶδα ὅτι οὐδὲν οἶδα.</p>
-            <p class="lang-translation">I know that I know nothing.</p>
-            <span class="lang-source">Socrates, via Plato</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Greek</span>
+                <span class="lang-native">Ελληνικά</span>
+                <span class="lang-family">Hellenic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">ἓν οἶδα ὅτι οὐδὲν οἶδα.</p>
+              <p class="lang-translation">I know that I know nothing.</p>
+              <span class="lang-source">Socrates, via Plato</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">German</span>
-              <span class="lang-native">Deutsch</span>
-            </div>
-            <p class="lang-quote">Wer immer strebend sich bemüht, den können wir erlösen.</p>
-            <p class="lang-translation">Whoever strives with all his might, him we can redeem.</p>
-            <span class="lang-source">Goethe · Faust II</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">German</span>
+                <span class="lang-native">Deutsch</span>
+                <span class="lang-family">Germanic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">Wer immer strebend sich bemüht, den können wir erlösen.</p>
+              <p class="lang-translation">Whoever strives with all his might, him we can redeem.</p>
+              <span class="lang-source">Goethe · Faust II</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">French</span>
-              <span class="lang-native">Français</span>
-            </div>
-            <p class="lang-quote">Il faut cultiver notre jardin.</p>
-            <p class="lang-translation">We must cultivate our garden.</p>
-            <span class="lang-source">Voltaire · Candide</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">French</span>
+                <span class="lang-native">Français</span>
+                <span class="lang-family">Romance</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">Il faut cultiver notre jardin.</p>
+              <p class="lang-translation">We must cultivate our garden.</p>
+              <span class="lang-source">Voltaire · Candide</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Italian</span>
-              <span class="lang-native">Italiano</span>
-            </div>
-            <p class="lang-quote">Nel mezzo del cammin di nostra vita.</p>
-            <p class="lang-translation">In the middle of the journey of our life.</p>
-            <span class="lang-source">Dante · Inferno I</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Italian</span>
+                <span class="lang-native">Italiano</span>
+                <span class="lang-family">Romance</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">Nel mezzo del cammin di nostra vita.</p>
+              <p class="lang-translation">In the middle of the journey of our life.</p>
+              <span class="lang-source">Dante · Inferno I</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Spanish</span>
-              <span class="lang-native">Español</span>
-            </div>
-            <p class="lang-quote">En un lugar de la Mancha, de cuyo nombre no quiero acordarme.</p>
-            <p class="lang-translation">In a place in La Mancha, whose name I do not wish to recall.</p>
-            <span class="lang-source">Cervantes · Don Quixote</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Spanish</span>
+                <span class="lang-native">Español</span>
+                <span class="lang-family">Romance</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">En un lugar de la Mancha, de cuyo nombre no quiero acordarme.</p>
+              <p class="lang-translation">In a place in La Mancha, whose name I do not wish to recall.</p>
+              <span class="lang-source">Cervantes · Don Quixote</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Portuguese</span>
-              <span class="lang-native">Português</span>
-            </div>
-            <p class="lang-quote">Tudo vale a pena se a alma não é pequena.</p>
-            <p class="lang-translation">Everything is worth it if the soul is not small.</p>
-            <span class="lang-source">Fernando Pessoa</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Portuguese</span>
+                <span class="lang-native">Português</span>
+                <span class="lang-family">Romance</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">Tudo vale a pena se a alma não é pequena.</p>
+              <p class="lang-translation">Everything is worth it if the soul is not small.</p>
+              <span class="lang-source">Fernando Pessoa</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Russian</span>
-              <span class="lang-native">Русский</span>
-            </div>
-            <p class="lang-quote">Красота спасёт мир.</p>
-            <p class="lang-translation">Beauty will save the world.</p>
-            <span class="lang-source">Dostoevsky · The Idiot</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Russian</span>
+                <span class="lang-native">Русский</span>
+                <span class="lang-family">Slavic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">Красота спасёт мир.</p>
+              <p class="lang-translation">Beauty will save the world.</p>
+              <span class="lang-source">Dostoevsky · The Idiot</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Polish</span>
-              <span class="lang-native">Polski</span>
-            </div>
-            <p class="lang-quote">Nic dwa razy się nie zdarza.</p>
-            <p class="lang-translation">Nothing happens twice.</p>
-            <span class="lang-source">Wisława Szymborska</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Polish</span>
+                <span class="lang-native">Polski</span>
+                <span class="lang-family">Slavic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">Nic dwa razy się nie zdarza.</p>
+              <p class="lang-translation">Nothing happens twice.</p>
+              <span class="lang-source">Wisława Szymborska</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Czech</span>
-              <span class="lang-native">Čeština</span>
-            </div>
-            <p class="lang-quote">Pravda vítězí.</p>
-            <p class="lang-translation">Truth prevails.</p>
-            <span class="lang-source">Jan Hus</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Czech</span>
+                <span class="lang-native">Čeština</span>
+                <span class="lang-family">Slavic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">Pravda vítězí.</p>
+              <p class="lang-translation">Truth prevails.</p>
+              <span class="lang-source">Jan Hus</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Swedish</span>
-              <span class="lang-native">Svenska</span>
-            </div>
-            <p class="lang-quote">Borta bra men hemma bäst.</p>
-            <p class="lang-translation">Away is good, but home is best.</p>
-            <span class="lang-source">Proverb</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Swedish</span>
+                <span class="lang-native">Svenska</span>
+                <span class="lang-family">Germanic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">Borta bra men hemma bäst.</p>
+              <p class="lang-translation">Away is good, but home is best.</p>
+              <span class="lang-source">Proverb</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Turkish</span>
-              <span class="lang-native">Türkçe</span>
-            </div>
-            <p class="lang-quote">Damlaya damlaya göl olur.</p>
-            <p class="lang-translation">Drop by drop, a lake is formed.</p>
-            <span class="lang-source">Proverb</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Turkish</span>
+                <span class="lang-native">Türkçe</span>
+                <span class="lang-family">Turkic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">Damlaya damlaya göl olur.</p>
+              <p class="lang-translation">Drop by drop, a lake is formed.</p>
+              <span class="lang-source">Proverb</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Mandarin</span>
-              <span class="lang-native">中文</span>
-            </div>
-            <p class="lang-quote">千里之行，始於足下。</p>
-            <p class="lang-translation">A journey of a thousand li begins beneath one's feet.</p>
-            <span class="lang-source">Laozi · Tao Te Ching</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Mandarin</span>
+                <span class="lang-native">中文</span>
+                <span class="lang-family">Sinitic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">千里之行，始於足下。</p>
+              <p class="lang-translation">A journey of a thousand li begins beneath one's feet.</p>
+              <span class="lang-source">Laozi · Tao Te Ching</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Japanese</span>
-              <span class="lang-native">日本語</span>
-            </div>
-            <p class="lang-quote">古池や 蛙飛びこむ 水の音</p>
-            <p class="lang-translation">The old pond — a frog leaps in, the sound of water.</p>
-            <span class="lang-source">Matsuo Bashō</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Japanese</span>
+                <span class="lang-native">日本語</span>
+                <span class="lang-family">Japonic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">古池や 蛙飛びこむ 水の音</p>
+              <p class="lang-translation">The old pond — a frog leaps in, the sound of water.</p>
+              <span class="lang-source">Matsuo Bashō</span>
+            </div></div>
+          </details>
 
-          <div class="lang-item">
-            <div class="lang-head">
-              <span class="lang-name">Korean</span>
-              <span class="lang-native">한국어</span>
-            </div>
-            <p class="lang-quote">시작이 반이다.</p>
-            <p class="lang-translation">To begin is half the work.</p>
-            <span class="lang-source">Proverb</span>
-          </div>
+          <details class="lang-item">
+            <summary class="lang-head">
+              <div class="lang-info">
+                <span class="lang-name">Korean</span>
+                <span class="lang-native">한국어</span>
+                <span class="lang-family">Koreanic</span>
+              </div>
+              <span class="lang-toggle"></span>
+            </summary>
+            <div class="lang-body"><div class="lang-body-inner">
+              <p class="lang-quote">시작이 반이다.</p>
+              <p class="lang-translation">To begin is half the work.</p>
+              <span class="lang-source">Proverb</span>
+            </div></div>
+          </details>
 
         </div>
       </div>
